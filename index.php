@@ -33,47 +33,14 @@
                             <span class="brandTitle">Assignment1</span>
                         </a> <!-- /.navbar-brand -->
                     </div> <!-- /.navbar-header -->
-                    </div><!--/#navbar -->
-                </div><!-- /.container -->
+                </div><!--/#navbar -->
             </nav>
         </div><!-- /.navigationBar -->
 
         <div class="container">
-          <form id="emailForm" name="emailForm" action="email_handler.php" method="POST"> 
-            <div class="row">
-              <div class="col-xs-6 col-sm-3">
-                
-                  <label for="emailFrm_FirstName">First Name</label>
-                  <input id="emailFrm_FirstName" name="emailFrm_FirstName" class="form-control" value="" type="text">
-
-                  <label for="emailFrm_LastName">Last Name</label>
-                  <input id="emailFrm_LastName" name="emailFrm_LastName" class="form-control" value="" type="text">
-
-                  <label for="emailFrm_EmailAddress">Email Address</label>
-                  <input id="emailFrm_EmailAddress" name="emailFrm_EmailAddress" class="form-control" value="" type="text">
-
-                  <label for="emailFrm_Reason">Email Reason</label>
-                  <select id="emailFrm_Reason" name="emailFrm_Reason" class="form-control">
-                    <option value="" selected disabled >Please Select an email reason</option>
-                    <option value="I have nothing to do">I have nothing to do.</option>
-                    <option value="I have to much to do">I have to much to do</option>
-                  </select>
-
-                  <label for="emailFrm_agreeToTerms">I agree to the terms and conditions of this service.</label>
-                  <input id="emailFrm_agreeToTerms" name="emailFrm_agreeToTerms" class="form-control" value="" type="checkbox" style="width: 20px; height: 20px;">
-              </div>
-            </div> <!-- /.row -->
-
-            <div class="row">
-              <div class="col-xs-6 col-sm-3">
-                <button id="emailForm_submit" name="emailForm_submit" type="submit" class="pull-right">Submit</button>
-              </div>
-            </div> <!-- /.row -->
-          </form>
+        
         </div> <!-- /.container -->
         
-        
-
         <footer>
           <div class="container">
             <div class="row footerRow">
@@ -86,11 +53,11 @@
 
       
 	
-		    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!-- get jQuery js lib from CDN --> 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!-- get jQuery js lib from CDN --> 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script><!-- jQuery fallback if CDN is not available-->
     
         <script src="js/vendor/bootstrap.min.js"></script><!-- get bootstrap js lib  -->
-    
+
         <script src="js/main.js"></script> <!-- get main(custom) js lib -->
     </body>
 </html>
