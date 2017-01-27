@@ -5,7 +5,14 @@ $emailFirstName = $_POST['emailFrm_FirstName'];
 $emailLastName = $_POST['emailFrm_LastName'];
 $emailAddress = $_POST['emailFrm_EmailAddress'];
 $emailReason = $_POST['emailFrm_Reason'];
-$emailAgreeToTerms_bool = $_POST['emailFrm_agreeToTerms'];
+if(isset($_POST['emailFrm_agreeToTerms'])){
+	$emailAgreeToTerms_bool = '1';
+}else{
+	$emailAgreeToTerms_bool = '0';
+}
+
+echo $emailAgreeToTerms_bool;
+
 
 //connect to the database
 $dbConnection = mysqli_connect('localhost','pattende_dgm3760','Pass1word','pattende_dgm3760') or die('Test');
@@ -16,8 +23,18 @@ $query =
 	"VALUES('$emailFirstName','$emailLastName','$emailAddress','$emailReason','$emailAgreeToTerms_bool')";
 
 //run Query
-$result = mysqli_query($dbConnection, $query) or die ('Query Failed');
+//$result = mysqli_query($dbConnection, $query) or die ('Query Failed');
 
 //close connection
 mysqli_close($dbConnection);
 ?>
+
+<html>
+<head>
+	<title>Thank you</title>
+</head>
+<body>
+	<h2>Thank you!</h2>
+	<p>Your email has been sent. We will be contacting you shortly!</p>
+</body>
+</html>
