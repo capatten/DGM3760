@@ -11,8 +11,6 @@ if(isset($_POST['emailFrm_agreeToTerms'])){
 	$emailAgreeToTerms_bool = '0';
 }
 
-echo $emailAgreeToTerms_bool;
-
 
 //connect to the database
 $dbConnection = mysqli_connect('localhost','pattende_dgm3760','Pass1word','pattende_dgm3760') or die('Test');
@@ -34,7 +32,7 @@ mysqli_close($dbConnection);
 	<title>Thank you</title>
 </head>
 <body>
-	<h2>Thank you!</h2>
+	<h2>Thank you <?php echo $emailFirstName. $emailLastName; ?>!</h2>
 	<p>Your email has been sent. We will be contacting you shortly!</p>
 </body>
 </html>
