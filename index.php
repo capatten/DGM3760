@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Assignment 1</title>
+        <title>Assignment 3</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +30,7 @@
                     <!-- holds navigation toggle button for smaller screens and brand anchor(s) -->
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-                            <span class="brandTitle">Assignment1</span>
+                            <span class="brandTitle">Assignment 3</span>
                         </a> <!-- /.navbar-brand -->
                     </div> <!-- /.navbar-header -->
                 </div><!--/#navbar -->
@@ -38,7 +38,35 @@
         </div><!-- /.navigationBar -->
 
         <div class="container">
-        
+        	<form id="newsletter_frm" name="newsletter_frm" action="spamHandler.php" method="post">
+        		<div class="row">
+	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+	        			<label for="newsLetter_fName">First Name:</label>
+	        			<input type="text" id="newsLetter_fName" name="newsLetter_fName" class="form-control" value="" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="row">
+	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+	        			<label for="newsLetter_lName">Last Name:</label>
+	        			<input type="text" id="newsLetter_lName" name="newsLetter_lName" class="form-control" value="" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="row">
+	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+	        			<label for="newsLetter_email">Email Address:</label>
+	        			<input type="text" id="newsLetter_email" name="newsLetter_email" class="form-control" value="" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="row">
+	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+	        			<button type="submit" id="newsLetter_sbmt" name="newsLetter_sbmt" class="btn btn-primary pull-right">Submit</button>
+	        		</div>
+	        	</div>
+        	</form>
+
         </div> <!-- /.container -->
         
         <footer>
