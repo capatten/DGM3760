@@ -5,5 +5,5 @@ while($x < 10){
 	echo $x;
 	$x++;
 };
-echo'<br>All Done!';
+echo '<br>All Done!';
 ?>
