@@ -38,7 +38,7 @@
         </div><!-- /.navigationBar -->
 
         <div class="container">
-        	<form id="newsletter_frm" name="newsletter_frm" action="spamHandler.php" method="post">
+        	<form id="newsletter_frm" name="newsletter_frm" action="addToDatabase.php" method="post">
         		<div class="row">
 	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
 	        			<label for="newsLetter_fName">First Name:</label>
