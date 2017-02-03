@@ -1,4 +1,7 @@
 <?php
+$sendSpam_Subject = $_POST['sendSpam_Subject'];
+$sendSpam_Message = $_POST['sendSpam_Message'];
+
 //connect to the database
 $dbConnection = mysqli_connect('localhost','pattende_dgm3760','Pass1word','pattende_dgm3760') or die('Test');
 
@@ -19,9 +22,19 @@ mysqli_close($dbConnection);
 
 //display result
 while($row = mysqli_fetch_array($result)){
-	echo $row[f_name];
-	echo $row[l_name];
-	echo $row[email_address];
+	$f_name = $row[f_name];
+	$l_name =  $row[l_name];
+	$email_address = $row[email_address];
+	$email_to = $email_address;
+	$email_subject = $sendSpam_Subject;
+	
+	//set content of email and header data
+	$email_body = "Dear $f_name $l_name, \n\n$sendSpam_Message";
+	
+	//execute mail
+	mail($email_to, $email_subject, $email_body, 'From:assignment3@example.com');
+	
+	echo 'Message sent to ' . $email_address .'<br>';
 }
 ?>
 <!DOCTYPE HTML>

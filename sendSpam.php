@@ -33,6 +33,12 @@
                             <span class="brandTitle">Assignment 3</span>
                         </a> <!-- /.navbar-brand -->
                     </div> <!-- /.navbar-header -->
+                    
+                    <div class="collapse navbar-collapse">
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="index.php">Back To Enroll</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
                 </div><!--/#navbar -->
             </nav>
         </div><!-- /.navigationBar -->
@@ -49,13 +55,13 @@
 	        	<div class="row">
 	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
 	        			<label for="sendSpam_Message">Last Name:</label>
-	        			<textarea id="sendSpam_Message" name="sendSpam_Message" class="form-control" value=""></textarea>
+	        			<textarea id="sendSpam_Message" name="sendSpam_Message" class="form-control" value="" style="resize:none;"></textarea>
 	        		</div>
 	        	</div>
 	        	
 	        	<div class="row">
 	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<button type="submit" id="sendSpam_sbmt" name="sendSpam_sbmt" class="btn btn-primary pull-right">Send</button>
+	        			<button type="submit" id="sendSpam_sbmt" name="sendSpam_sbmt" class="btn btn-primary pull-right" style="margin-top:5px;">Send</button>
 	        		</div>
 	        	</div>
         	</form>

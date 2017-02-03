@@ -33,6 +33,12 @@
                             <span class="brandTitle">Assignment 3</span>
                         </a> <!-- /.navbar-brand -->
                     </div> <!-- /.navbar-header -->
+                    
+				    <div class="collapse navbar-collapse">
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="sendSpam.php">Send Spam</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
                 </div><!--/#navbar -->
             </nav>
         </div><!-- /.navigationBar -->
@@ -62,7 +68,7 @@
 	        	
 	        	<div class="row">
 	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<button type="submit" id="newsLetter_sbmt" name="newsLetter_sbmt" class="btn btn-primary pull-right">Submit</button>
+	        			<button type="submit" id="newsLetter_sbmt" name="newsLetter_sbmt" class="btn btn-primary pull-right" style="margin-top:5px;">Submit</button>
 	        		</div>
 	        	</div>
         	</form>
