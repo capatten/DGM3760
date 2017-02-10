@@ -1,97 +1,44 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Assignment 3</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- BOOTSTRAP CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- FONT AWESOME CSS -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-
-        <!-- FONTS -->
-        <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
-        
-        <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <!-- JQUERY -->
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    
-    <body>
-        <div class="navigationBar">
-        	<nav class="navbar navbar-default" role="navigation">            
-                <div class="container">
-                    <!-- holds navigation toggle button for smaller screens and brand anchor(s) -->
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
-                            <span class="brandTitle">Assignment 3</span>
-                        </a> <!-- /.navbar-brand -->
-                    </div> <!-- /.navbar-header -->
-                    
-				    <div class="collapse navbar-collapse">
-				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="sendSpam.php">Send Spam</a></li>
-				      </ul>
-				    </div><!-- /.navbar-collapse -->
-                </div><!--/#navbar -->
-            </nav>
-        </div><!-- /.navigationBar -->
-
-        <div class="container">
-        	<form id="newsletter_frm" name="newsletter_frm" action="addToDatabase.php" method="post">
-        		<div class="row">
-	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<label for="newsLetter_fName">First Name:</label>
-	        			<input type="text" id="newsLetter_fName" name="newsLetter_fName" class="form-control" value="" />
-	        		</div>
-	        	</div>
-	        	
-	        	<div class="row">
-	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<label for="newsLetter_lName">Last Name:</label>
-	        			<input type="text" id="newsLetter_lName" name="newsLetter_lName" class="form-control" value="" />
-	        		</div>
-	        	</div>
-	        	
-	        	<div class="row">
-	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<label for="newsLetter_email">Email Address:</label>
-	        			<input type="text" id="newsLetter_email" name="newsLetter_email" class="form-control" value="" />
-	        		</div>
-	        	</div>
-	        	
-	        	<div class="row">
-	        		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-	        			<button type="submit" id="newsLetter_sbmt" name="newsLetter_sbmt" class="btn btn-primary pull-right" style="margin-top:5px;">Submit</button>
-	        		</div>
-	        	</div>
-        	</form>
-
-        </div> <!-- /.container -->
-        
-        <footer>
-          <div class="container">
-            <div class="row footerRow">
-              <div class="col-xs-3 pull-right">
-                <span class="copyright">&copy; Chad Patten | 2017</span>
-              </div> <!-- /.col-xs-3 -->
-            </div> <!-- /.footerRow -->      	
-          </div> <!-- /.container -->
-        </footer>
-
-      
-	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!-- get jQuery js lib from CDN --> 
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script><!-- jQuery fallback if CDN is not available-->
-    
-        <script src="js/vendor/bootstrap.min.js"></script><!-- get bootstrap js lib  -->
-
-        <script src="js/main.js"></script> <!-- get main(custom) js lib -->
-    </body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Manage Email Addresses</title>
+	</head>
+	<body>
+		<form action="<?php $SERVER['PHP_SELF'];?>" method="POST" >
+			<?php				
+				//connect to the database
+				$dbConnection = mysqli_connect('localhost','pattende_dgm3760','Pass1word','pattende_dgm3760') or die('Test');
+				
+				//delete records
+				if(isset($_POST['submit'])){
+					//build delete query
+					$del_query ="DELETE FROM Assignment4 WHERE id IN (" .implode( "," , $_POST['delArray'] ). ")";
+					
+					//run Query
+					mysqli_query($dbConnection, $del_query) or die ('Query Failed');
+				};// end if
+				
+				
+				//build query
+				$query =
+				"SELECT * FROM Assignment4";
+				
+				//run Query
+				$result = mysqli_query($dbConnection, $query) or die ('Query Failed');
+				
+				//display result
+				while($row = mysqli_fetch_array($result)){
+					echo '<label for="'.$row['id'].'">';
+					echo '<input type="checkbox" value="'.$row['id'].'" id="'.$row['id'].'" name="delArray[]" />';
+					echo $row[f_name].' '.$row[l_name].' - '.$row[email_address].'</br/>';
+					echo '</label>';
+				}
+				
+				//close connection
+				mysqli_close($dbConnection);
+			?>
+			<input type="submit" name="submit" class="btn btn-primary" value="Remove Users"/>
+		</form>
+	</body>
 </html>
