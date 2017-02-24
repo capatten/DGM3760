@@ -52,7 +52,7 @@
         <div class="container">
         	<div class="row">
         		<div class="col-xs-12">
-        			<form>
+        			<form action="addNewUser.php" method="POST" enctype="multipart/form-data">
         				<div class="row">
         					<div class="col-xs-12 col-md-6 col-lg-3">
         						<label for="frst_nm" class="form-label">First Name:</label>
@@ -87,6 +87,11 @@
         						<label for="photo" class="form-label">Add a Profile Picture:</label>	
 								<input id="photo" name="photo" class="" value="" type="file" >
 								<span>Image must be saved as .jpg and cropped to 150px wide X 200px tall</span>
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<button class="btn btn-primary pull-right" type="submit">Submit</button> 
         					</div>
         				</div>
         			</form>
