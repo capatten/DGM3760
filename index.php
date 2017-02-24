@@ -25,24 +25,77 @@
     
     <body>
         <div class="navigationBar">
-        	<nav class="navbar navbar-default" role="navigation">            
-                <div class="container">
-                    <!-- holds navigation toggle button for smaller screens and brand anchor(s) -->
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
-                            <span class="brandTitle">Assignment1</span>
-                        </a> <!-- /.navbar-brand -->
-                    </div> <!-- /.navbar-header -->
-                </div><!--/#navbar -->
-            </nav>
+        	<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Assignment 5</a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="navbar-collapse">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Add New Profile<span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">Edit Profiles</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
         </div><!-- /.navigationBar -->
 
         <div class="container">
-        
+        	<div class="row">
+        		<div class="col-xs-12">
+        			<form>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<label for="frst_nm" class="form-label">First Name:</label>
+        						<input id="frst_nm" name="frst_nm" class="form-control" value="" type="text" > 
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<label for="lst_nm" class="form-label">Last Name:</label>
+        						<input id="lst_nm" name="lst_nm" class="form-control" value="" type="text" > 
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<label for="email" class="form-label">Email Address:</label>
+        						<input id="email" name="email" class="form-control" value="" type="text" > 
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<label for="gndr" class="form-label">Gender:</label>
+        						<select id="gndr" name="gndr" class="form-control" value="" type="text" >
+        							<option value="0" selected disabled>Select Gender</option>
+        							<option value="M">Male</option>
+        							<option value="F">Female</option>
+        							<option value="O">Other</option>
+        						</select>
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="col-xs-12 col-md-6 col-lg-3">
+        						<label for="photo" class="form-label">Add a Profile Picture:</label>	
+								<input id="photo" name="photo" class="" value="" type="file" >
+								<span>Image must be saved as .jpg and cropped to 150px wide X 200px tall</span>
+        					</div>
+        				</div>
+        			</form>
+        		</div>
+        	</div>
         </div> <!-- /.container -->
         
         <footer>
-          <div class="container">
+          <div class="container-fluid">
             <div class="row footerRow">
               <div class="col-xs-3 pull-right">
                 <span class="copyright">&copy; Chad Patten | 2017</span>
@@ -50,8 +103,6 @@
             </div> <!-- /.footerRow -->      	
           </div> <!-- /.container -->
         </footer>
-
-      
 	
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!-- get jQuery js lib from CDN --> 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script><!-- jQuery fallback if CDN is not available-->
