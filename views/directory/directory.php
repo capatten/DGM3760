@@ -61,6 +61,41 @@
 	}
 </style>
 
+<?php				
+	//connect to the database
+	$dbConnection = mysqli_connect('localhost','root','Pass1word','dgm3760') or die('Connection Refused');
+	
+	/*
+	//delete records
+	if(isset($_POST['submit'])){
+		//build delete query
+		$del_query ="DELETE FROM Assignment4 WHERE id IN (" .implode( "," , $_POST['delArray'] ). ")";
+		
+		//run Query
+		mysqli_query($dbConnection, $del_query) or die ('Query Failed');
+	};// end if
+	*/
+	
+	
+	//build query
+	$query =
+	"Select * FROM emp_directory";
+	
+	//run Query
+	$result = mysqli_query($dbConnection, $query) or die ('Query Failed');
+	
+	//display result
+	while($row = mysqli_fetch_array($result)){
+		echo '<label for="'.$row['employee_id'].'">';
+		/*echo '<input type="checkbox" value="'.$row['id'].'" id="'.$row['id'].'" name="delArray[]" />';
+		echo $row[f_name].' '.$row[l_name].' - '.$row[email_address].'</br/>';
+		echo '</label>';*/
+	}
+	
+	//close connection
+	mysqli_close($dbConnection);
+?>
+
 <div class="container emp_dir">
 	<div class="row">
 		<div class="col-xs-12 view-header">
