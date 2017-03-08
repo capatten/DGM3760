@@ -1,0 +1,11 @@
+body { 
+	padding-bottom: 70px;
+}
+
+.navbar-fixed-bottom {
+	min-height: 25px;
+}
+
+.navbar-fixed-bottom span {
+	padding-top: 2px;
+}

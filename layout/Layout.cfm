@@ -1,42 +1,36 @@
-<?php
-
-   header( 'Location: /DGM3760/views/directory/directory.php' ) ;
-
-?>
-<!--  
 <!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Test</title>
+	<title>Employee Directory</title>
 		<!--------------------------------- CSS --------------------------->
 		<!-- bootstrap css -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="assets/css/bootstrap-black-nav.css" rel="stylesheet"/>
+		<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../assets/css/bootstrap-black-nav.css" rel="stylesheet"/>
 
 		<!-- fontawesome css -->
-		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css"/>
 
 		<!-- jqwidgets css -->
-		<link rel="stylesheet" type="text/css" href="assets/js/jqwidgets/styles/jqx.base.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/js/jqwidgets/styles/jqx.base.css"/>
 
 		<!-- Roboto Font -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
 		<!-- index css -->
-		<link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/css/layout.css?<cfoutput>rand()</cfoutput>"/>
 
 		<!--------------------------------- SCRIPTS --------------------------->
 		<!--js -->
-		<script src="assets/js/jquery/jquery.min.js"></script>
-		<script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../assets/js/jquery/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Javascript Plugins -->
-		<script src="assets/js/jquery/spin.min.js"></script>
-		<script src="assets/js/jquery/jquery.spin.js"></script>
+		<script language="javascript" src="../assets/js/jquery/spin.min.js"></script>
+		<script language="javascript" src="../assets/js/jquery/jquery.spin.js"></script>
 
 		<!-- Custom js -->
-		<script src="assets/js/index.js"></script>
+		<script language="javascript" src="../assets/js/index.js"></script>
 	</head>
 
 	<body>
@@ -70,11 +64,15 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 
+		<!--- <cfinclude template = "../views/directory/directory.cfm"> --->
+		<cfinclude template = "../views/admin/directory.cfm">
 
-
-		<script>
-
-		</script>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+		  <div class="container-fluid">
+			  <div class="col-xs-12">
+					<span class="pull-right"><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; Chad Patten | 2017 </span>
+				</div>
+		  </div>
+		</nav>
 	</body>
 </html>
- -->
