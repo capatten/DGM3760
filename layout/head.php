@@ -26,11 +26,11 @@
 		<script src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Javascript Plugins -->
-		<script language="javascript" src="../../assets/js/jquery/spin.min.js"></script>
-		<script language="javascript" src="../../assets/js/jquery/jquery.spin.js"></script>
+		<script src="../../assets/js/jquery/spin.min.js"></script>
+		<script src="../../assets/js/jquery/jquery.spin.js"></script>
 
 		<!-- Custom js -->
-		<script language="javascript" src="../../assets/js/index.js"></script>
+		<script src="../../assets/js/index.js"></script>
 	</head>
 
 	<body>
@@ -44,21 +44,14 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../views/directory/directory.cfm">Employee Directory</a>
+		      <a class="navbar-brand" href="../../views/directory/directory.php">Employee Directory</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li class="active">
-			        <a href="../../views/directory/directory.cfm">
-				        View Directory
-				        <span class="sr-only">
-					        (current)
-								</span>
-							</a>
-						</li>
-		        <li><a href="../../views/admin/directory.cfm">Admin</a></li>
+		        <li class="<?php if($selectedNav == 'directory'){echo 'active';}?>"><a href="../../views/directory/directory.php">Directory</a></li>
+		        <li class="<?php if($selectedNav == 'admin'){echo 'active';}?>"><a href="../../views/admin/directory.php">Admin</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

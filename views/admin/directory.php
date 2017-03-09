@@ -1,11 +1,22 @@
-<cfinclude template = "../../layout/head.cfm">
+<?php
+	$selectedNav = "admin";
+	include '../../layout/head.php';
+	include './addNew_modal.php';
+	include './confirmDelete_modal.php';
+	include './editProfile_modal.php';
+	include '../../layout/foot.php';
+?>
 
 <style>
 	div.emp_dir div.view-header h2 {
 		text-align: center;
 		margin: 10px auto;
 	}
-
+	
+	div.emp_dir div.emp_row {
+		margin-bottom: 15px;
+	}
+	
 	div.emp_dir div.emp_row img {
 		width: 100%;
 	}
@@ -75,26 +86,6 @@
 	div.modal div.modal-body div.bio-row textarea{
 		resize: vertical;
 	}
-/*
-	div.modal div.modal-body div.empName-container label {
-		margin-bottom: 0px;
-	}
-
-	div.modal div.modal-body div.empName-container span {
-		padding-left: 5px;
-	}
-
-	div.modal div.modal-body div.expertise-row label,
-	div.modal div.modal-body div.specialization-row label,
-	div.modal div.modal-body div.bio-row label {
-		margin-bottom: 0px;
-	}
-
-	div.modal div.modal-body div.expertise-row p,
-	div.modal div.modal-body div.specialization-row p,
-	div.modal div.modal-body div.bio-row p {
-		padding-left: 5px;
-	}*/
 </style>
 
 <div class="container emp_dir">
@@ -114,30 +105,50 @@
 	</div>
 	<div class="row">
 		<div class="container">
-			<div class="row emp_row">
-				<div class="col-xs-1 img-container">
-					<img alt="" src="../../assets/img/profile/default.png"/>
-				</div>
-				<div class="col-xs-11 details-container">
-					<span id="[emp_id]" title="View [Employee Name] Profile">
-						[Employee Name]
-					</span>
-					<div class="admin-options">
-						<i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#edit" ></i>
-						&nbsp;&nbsp;
-						<i class="fa fa-trash" aria-hidden="true" data-empid="empid" data-empname="Chad Patten" data-toggle="modal" data-target="#deleteEmp" ></i>
-					</div>
-				</div>
-			</div>
+			<?php				
+				//connect to the database
+				$dbConnection = mysqli_connect('localhost','root','Pass1word','dgm3760') or die('Connection Refused');
+
+				//build query
+				$query =
+				"Select * FROM emp_directory";
+				
+				//run Query
+				$result = mysqli_query($dbConnection, $query) or die ('Query Failed');
+				
+				
+				//display result
+				while($row = mysqli_fetch_array($result)){
+					if(is_null($row['profile_img'])){
+						$img_name = 'default.png';
+					}else{
+						$img_name = $row['profile_img'];
+					}
+					echo '
+						<div class="row emp_row">
+							<div class="col-xs-1 img-container">
+								<img alt="" src="../../assets/img/profile/'.$img_name.'"/>
+							</div>
+							<div class="col-xs-11 details-container">
+								<span id="'.$row['employee_id'].'" title="View [Employee Name] Profile">
+									'.$row['employee_name'].'
+								</span>
+								<div class="admin-options">
+									<i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#edit_'.$row['employee_id'].'" ></i>
+									&nbsp;&nbsp;
+									<i class="fa fa-trash" aria-hidden="true" data-empid="'.$row['employee_id'].'" data-empname="'.$row['employee_name'].'" data-toggle="modal" data-target="#deleteEmp" ></i>
+								</div>
+							</div>
+						</div>
+					';
+				}
+				
+				//close connection
+				mysqli_close($dbConnection);
+			?>
 		</div>
 	</div>
 </div>
-
-<cfinclude template = "./addNew_modal.cfm">
-<cfinclude template = "./editProfile_modal.cfm">
-<cfinclude template = "./confirmDelete_modal.cfm">
-
-<cfinclude template = "../../layout/foot.cfm">
 
 <script>
 	var $deleteIcon = $(".fa-trash");

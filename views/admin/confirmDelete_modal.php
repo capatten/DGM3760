@@ -1,4 +1,4 @@
-<form action="deleteSuccessful.cfm" method="POST">
+<form action="deleteSuccessful.php" method="POST">
 	<div class="modal fade" id="deleteEmp" tabindex="-1" role="dialog" data-backdrop="static">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
