@@ -1,6 +1,7 @@
-<?php				
+<?php
+	require_once('../variables.php');
 	//connect to the database
-	$dbConnection = mysqli_connect('localhost','root','Pass1word','dgm3760') or die('Connection Refused');	
+	$dbConnection = mysqli_connect(HOST,USER, PASSWORD, DB_NAME) or die('Connection Refused');
 	
 	//build query
 	$query =

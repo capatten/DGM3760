@@ -1,4 +1,5 @@
 <?php
+	require_once('../variables.php');
 	$selectedNav = "directory";
 	include '../../layout/head.php';
 	include './profile_modal.php';
@@ -6,70 +7,7 @@
 	include '../../layout/foot.php';
 ?>
 
-<style>
-	div.emp_dir div.view-header h2 {
-		text-align: center;
-		margin: 10px auto;
-	}
-	
-	div.emp_dir div.emp_row {
-		margin-bottom: 15px;
-	}
-
-	div.emp_dir div.emp_row img {
-		width: 100%;
-	}
-
-	div.emp_dir div.emp_row div.admin-options {
-		position: absolute;
-    bottom: 0;
-    display: block;
-	}
-
-	div.emp_dir div.emp_row div.details-container {
-		height:51px;
-	}
-
-	div.modal div.modal-body div.image-container img {
-		width:100%;
-		margin-bottom: 15px;
-	}
-
-	div.modal div.modal-body div.empName-container label {
-		margin-bottom: 0px;
-	}
-
-	div.modal div.modal-body div.empName-container span {
-		padding-left: 5px;
-	}
-
-	div.modal div.modal-body div.expertise-row label,
-	div.modal div.modal-body div.specialization-row label,
-	div.modal div.modal-body div.bio-row label {
-		margin-bottom: 0px;
-	}
-
-	div.modal div.modal-body div.expertise-row p,
-	div.modal div.modal-body div.specialization-row p,
-	div.modal div.modal-body div.bio-row p {
-		padding-left: 5px;
-	}
-
-	div.modal div.modal-body div.msg-container label,
-	div.modal div.modal-body div.msg-from label {
-		margin-bottom: 0px;
-	}
-
-	div.modal div.modal-body div.msg-container textarea {
-		resize: vertical;
-		width: 100%;
-		min-height: 200px;
-	}
-
-	div.modal div.modal-body div.msg-from input {
-		width:100%;
-	}
-</style>
+<link href="../../assets/css/views/directory/directory.css" rel="stylesheet"/>
 
 <div class="container emp_dir">
 	<div class="row">
@@ -81,7 +19,7 @@
 		<div class="container">
 			<?php				
 				//connect to the database
-				$dbConnection = mysqli_connect('localhost','root','Pass1word','dgm3760') or die('Connection Refused');
+				$dbConnection = mysqli_connect(HOST,USER, PASSWORD, DB_NAME) or die('Connection Refused');
 
 				//build query
 				$query =

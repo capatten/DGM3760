@@ -1,0 +1,78 @@
+div.emp_dir div.view-header h2 {
+	text-align: center;
+	margin: 10px auto;
+}
+
+div.emp_dir div.emp_row {
+	margin-bottom: 15px;
+}
+
+div.emp_dir div.emp_row img {
+	width: 100%;
+}
+
+div.emp_dir div.emp_row div.admin-options {
+	/*position: absolute;
+   bottom: 0;
+   display: block;*/
+	display: inline-block;
+   margin-left: 15px;
+}
+
+div.emp_dir div.emp_row div.admin-options i.fa-pencil {
+	color: orange;
+	font-size: 20px;
+}
+
+div.emp_dir div.emp_row div.admin-options i.fa-trash {
+	color: red;
+	margin-left: 15px;
+	font-size: 20px;
+}
+
+div.emp_dir div.emp_row div.admin-options i.fa-pencil:hover,
+div.emp_dir div.emp_row div.admin-options i.fa-trash:hover {
+	transform: scale(1.5);
+	cursor: pointer;
+}
+
+div.emp_dir div.emp_row div.details-container {
+	height:51px;
+}
+
+div.emp_dir div.addNewEmployee-row {
+	background-color: #e6e6e6;
+   border: 1px solid #000;
+   text-align: center;
+   border-radius: 15px;
+	margin-bottom: 15px;
+}
+
+div.emp_dir div.addNewEmployee-row:hover {
+	background-color: #66d866;
+	border: 1px solid #54b154;
+	cursor: pointer;
+}
+
+div.emp_dir div.addNewEmployee-row h3 {
+	margin: 0;
+   padding: 15px;
+}
+
+div.modal div.modal-body div.addnew label {
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+div.modal div.modal-body div.image-container img {
+	width:100%;
+	margin-bottom: 15px;
+}
+
+div.modal div.modal-body div.profile-img-wrapper:hover {
+	color: #797878;
+}
+
+div.modal div.modal-body div.bio-row textarea{
+	resize: vertical;
+}

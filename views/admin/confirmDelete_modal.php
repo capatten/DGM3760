@@ -8,13 +8,14 @@
 	      </div>
 	      <div class="modal-body">
 	        <div class="container-fluid">
-						<div class="row">
-							<div class="col-xs-12">
-								<h3>Are you sure you want to delete <span id="delete_empName"></span></h3>
-								<input id="delete_empID" name="delete_empID" value="" type="hidden">
-							</div>
-						</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h3>Are you sure you want to delete <span id="delete_empName"></span></h3>
+						<input id="delete_empID" name="delete_empID" value="" type="hidden">
+						<input id="delete_img" name="delete_img" value="" type="hidden">
 					</div>
+				</div>
+			</div>
 	      </div>
 	      <div class="modal-footer">
 					<button type="button" class="btn btn-warning pull-right" data-dismiss="modal">No</button>

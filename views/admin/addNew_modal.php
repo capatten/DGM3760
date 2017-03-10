@@ -1,4 +1,4 @@
-<form action="addSuccessful.php" method="POST">
+<form enctype="multipart/form-data" action="addSuccessful.php" method="POST">
 	<div class="modal fade" id="addNew" tabindex="-1" role="dialog" data-backdrop="static">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -39,8 +39,8 @@
 						</div>
 						<div class="row addphoto-row">
 							<div class="col-xs-12">
-								<label for="addNew_empImage">Add Profile Image</label><br/>
-								<input id="addNew_empImage" name="addNew_empImage" class="form-control" type="file">
+								<label for="addNew_EmpImage">Add Profile Image</label><br/>
+								<input id="addNew_EmpImage" name="addNew_EmpImage" class="form-control" type="file">
 							</div>
 						</div>
 						<div class="row expertise-row">

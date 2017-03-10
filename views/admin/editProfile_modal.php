@@ -1,6 +1,7 @@
-<?php				
+<?php
+	require_once('../variables.php');
 	//connect to the database
-	$dbConnection = mysqli_connect('localhost','root','Pass1word','dgm3760') or die('Connection Refused');
+	$dbConnection = mysqli_connect(HOST,USER, PASSWORD, DB_NAME) or die('Connection Refused');
 
 	//build query
 	$query =
@@ -18,7 +19,7 @@
 			$img_name = $row['profile_img'];
 		}
 		echo '
-			<form action="editSuccessful.php" method="POST">
+			<form enctype="multipart/form-data" action="editSuccessful.php" method="POST">
 				<div class="modal fade" id="edit_'.$row['employee_id'].'" tabindex="-1" role="dialog" data-backdrop="static">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -41,6 +42,7 @@
 												<div class="col-xs-12 empName-container">
 													<label>Employee Name</label><br/>
 													<input id="edit_empName" name="edit_empName" value="'.$row['employee_name'].'" class="form-control" type="text">
+													<input name="edit_empID" value="'.$row['employee_id'].'" type="hidden">
 												</div>
 											</div>
 											<div class="row">
@@ -57,16 +59,17 @@
 											</div>
 										</div>
 									</div>
-									<div class="row addphoto-row">
+									<!-- <div class="row addphoto-row">
 										<div class="col-xs-12">
 											<label>Add Profile Image</label><br/>
 											<input id="edit_empImage" name="edit_empImage" class="form-control" type="file">
+											<input id="profile_img" name="profile_img" type="hidden" value="'.$row['profile_img'].'" />
 										</div>
-									</div>
+									</div> -->
 									<div class="row expertise-row">
 										<div class="col-xs-12">
-											<label for="addNew_empExpertise">Area of Expertise</label><br/>
-											<select id="addNew_empExpertise" name="addNew_empExpertise" class="form-control" type="text">
+											<label for="edit_empExpertise">Area of Expertise</label><br/>
+											<select id="edit_empExpertise" name="edit_empExpertise" class="form-control" type="text">
 												<option value="'.$row['area_of_expertise'].'" selected>'.$row['area_of_expertise'].'</option>
 												<option value="" disabled></option>
 												<option value="Chemistry">Chemistry</option>
@@ -77,8 +80,8 @@
 									</div>
 									<div class="row specialization-row">
 										<div class="col-xs-12">
-											<label for="addNew_specialization">Area of Specialization</label><br/>
-											<input id="addNew_specialization" name="addNew_specialization" class="form-control" value="'.$row['area_of_specialization'].'" type="text">
+											<label for="edit_specialization">Area of Specialization</label><br/>
+											<input id="edit_specialization" name="edit_specialization" class="form-control" value="'.$row['area_of_specialization'].'" type="text">
 										</div>
 									</div>
 									<div class="row bio-row">

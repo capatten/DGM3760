@@ -2,7 +2,7 @@
 	$selectedNav = "directory";
 	include '../../layout/head.php';
 	include '../../layout/foot.php';
-	header('Refresh: 3; url=directory.php');
+	header('Refresh: 1; url=directory.php');
 ?>
 
 <div style="text-align: center; margin-top: 15px;">
