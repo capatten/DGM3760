@@ -13,7 +13,7 @@
 						<div class="row">
 							<div class="col-xs-4 image-container">
 								<div class="profile-img-wrapper">
-									<img alt="" src="../../assets/img/profile/default_color.png"/>
+									<img id="img" alt="" src="../../assets/img/profile/default_color.png"/>
 								</div>
 							</div>
 							<div class="col-xs-8">
@@ -78,3 +78,22 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 </form>
+
+<script>
+$(function() {
+    $("#addNew_EmpImage").on("change", function()
+    {
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+ 
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+ 
+            reader.onloadend = function(){ // set image as src
+                $("#img").attr('src', this.result);
+            }
+        }
+    });
+});
+</script>
