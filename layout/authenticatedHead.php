@@ -5,32 +5,32 @@
 	<title>Assignment 7</title>
 		<!--------------------------------- CSS --------------------------->
 		<!-- bootstrap css -->
-		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="../../assets/css/bootstrap-black-nav.css" rel="stylesheet"/>
+		<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../../assets/css/bootstrap-black-nav.css" rel="stylesheet"/>
 
 		<!-- fontawesome css -->
-		<link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../assets/css/font-awesome.min.css"/>
 
 		<!-- jqwidgets css -->
-		<link rel="stylesheet" type="text/css" href="../../assets/js/jqwidgets/styles/jqx.base.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../assets/js/jqwidgets/styles/jqx.base.css"/>
 
 		<!-- Roboto Font -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
 		<!-- index css -->
-		<link rel="stylesheet" type="text/css" href="../../assets/css/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../assets/css/layout.css"/>
 
 		<!--------------------------------- SCRIPTS --------------------------->
 		<!--js -->
-		<script src="../../assets/js/jquery/jquery.min.js"></script>
-		<script src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../../assets/js/jquery/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Javascript Plugins -->
-		<script src="../../assets/js/jquery/spin.min.js"></script>
-		<script src="../../assets/js/jquery/jquery.spin.js"></script>
+		<script src="../../../assets/js/jquery/spin.min.js"></script>
+		<script src="../../../assets/js/jquery/jquery.spin.js"></script>
 
 		<!-- Custom js -->
-		<script src="../../assets/js/index.js"></script>
+		<script src="../../../assets/js/index.js"></script>
 	</head>
 
 	<body>
@@ -44,14 +44,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../views/assignment7/index.php">Assignment 7</a>
+		      <a class="navbar-brand" href="../../views/assignment7/index.php">Welcome <?php echo $_COOKIE['firstName'].' '.$_COOKIE['lastName']; ?> </a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li data-target="#newUser" data-toggle="modal" data-backdrop="static"><a href="#">Sign Up</a></li>
-		        <li data-target="#login" data-toggle="modal" data-backdrop="static"><a href="#">Login</a></li>
+		        <li class="<?php if($selectedNav == 'dashboard'){echo 'active';}?>"><a href="./dashboard.php">Dashboard</a></li>
+		        <li class="<?php if($selectedNav == 'profile'){echo 'active';}?>"><a href="./profile.php">Profile</a></li>
+		        <li><a href="./logout.php">Log Out</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
