@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Assignment 7</title>
+	<title>Assignment 8</title>
 		<!--------------------------------- CSS --------------------------->
 		<!-- bootstrap css -->
 		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -44,14 +44,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../views/assignment7/index.php">Assignment 7</a>
+		      <a class="navbar-brand" href="../../views/assignment7/index.php">Assignment 8</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li data-target="#newUser" data-toggle="modal" data-backdrop="static"><a href="#">Sign Up</a></li>
-		        <li data-target="#login" data-toggle="modal" data-backdrop="static"><a href="#">Login</a></li>
+		        <li><a href="../emp_list/">Home</a></li>
+		        <li><a href="../add_New/">Add New</a></li>
+		        <li><a href="../search/">Search</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

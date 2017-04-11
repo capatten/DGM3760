@@ -1,0 +1,7 @@
+div.index-wrapper h1 {
+	text-align: center;
+}
+
+div.index-wrapper button#submit {
+	margin-top: 10px;
+}
