@@ -44,7 +44,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../views/assignment7/index.php">Assignment 8</a>
+		      <a class="navbar-brand" href="../../../DGM3760/index.php">Assignment 8</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->

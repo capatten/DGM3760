@@ -87,7 +87,7 @@
 						<div class="col-xs-12">
 							<label for="status" class="form-label">Status</label>
 							<select id="status" name="status" class="form-control">
-								<option selected disabled>-- Select status --</option>
+								<option selected disabled>-- Select Status --</option>
 								<?php 
 									while($row = mysqli_fetch_array($result_status)){
 										echo '<option value="'. $row["status_id"] .'">'.$row["status_desc"] . '</option>';
