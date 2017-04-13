@@ -52,7 +52,6 @@
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="../emp_list/">Home</a></li>
 		        <li><a href="../add_New/">Add New</a></li>
-		        <li><a href="../search/">Search</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

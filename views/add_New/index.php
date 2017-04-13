@@ -11,7 +11,9 @@
 			department_id
 			,department_desc
 		FROM
-			llpa.ref_emp_department";
+			llpa.ref_emp_department
+		ORDER BY
+			department_desc";
 	
 	$result_departments = mysqli_query($dbConnection, $query) or die('Query Failed');
 	
@@ -21,7 +23,9 @@
 			title_id
 			,title_desc
 		FROM
-			llpa.ref_title";
+			llpa.ref_title
+		ORDER BY
+			title_desc";
 	
 	$result_titles = mysqli_query($dbConnection, $query) or die('Query Failed');
 	
@@ -31,7 +35,9 @@
 			status_id
 			,status_desc
 		FROM
-			llpa.ref_status";
+			llpa.ref_status
+		ORDER BY
+			status_desc";
 	
 	$result_status = mysqli_query($dbConnection, $query) or die('Query Failed');
 ?>
