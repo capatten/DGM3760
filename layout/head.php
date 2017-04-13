@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Assignment 5</title>
+	<title>Employee Directory</title>
 		<!--------------------------------- CSS --------------------------->
 		<!-- bootstrap css -->
 		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -44,14 +44,13 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../../DGM3760/index.php">Assignment 8</a>
+		      <a class="navbar-brand" href="../../views/directory/directory.php">Employee Directory</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="../add_new/">Add New Profile</a></li>
-		        <li><a href="../edit/">Edit Profile</a></li>
+		        <li class="<?php if($selectedNav == 'directory'){echo 'active';}?>"><a href="../../views/directory/directory.php">Directory</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
