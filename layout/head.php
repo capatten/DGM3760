@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Employee Directory</title>
+	<title>Listings</title>
 		<!--------------------------------- CSS --------------------------->
 		<!-- bootstrap css -->
 		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -44,14 +44,16 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="../../views/directory/directory.php">Employee Directory</a>
+		      <a class="navbar-brand" href="../../views/directory/directory.php">Listings</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li class="<?php if($selectedNav == 'directory'){echo 'active';}?>"><a href="../../views/directory/directory.php">Directory</a></li>
-		        <li class="<?php if($selectedNav == 'admin'){echo 'active';}?>"><a href="../../views/admin/directory.php">Admin</a></li>
+		        <li class="<?php if($selectedNav == 'home'){echo 'active';}?>"><a href="../../views/main/index.php">Home</a></li>
+		        <li class="<?php if($selectedNav == 'add new'){echo 'active';}?>" data-toggle="modal" data-target="#addNew"><a href="#">Add New</a></li>
+		        <!-- <li class="<?php if($selectedNav == 'approve'){echo 'active';}?>"><a href="../../views/approve/approve.php">Approve</a></li>
+		        <li class="<?php if($selectedNav == 'delete'){echo 'active';}?>"><a href="../../views/delete/delete.php">Delete</a></li>  -->
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
